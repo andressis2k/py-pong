@@ -97,7 +97,7 @@ while running:
     raqueta1.draw(screen)
     raqueta2.draw(screen)
     pelota.draw(screen)
-    pelota2.draw(screen)
+    #pelota2.draw(screen)
 
     pg.display.flip()
     #input(f"Pelota {pelota.pos_y}, Raqueta 2 {raqueta2.pos_y}, Raqueta 2 + r/2 {raqueta2.pos_y + raqueta2.h/2}, Raqueta2h/2 + pelota.rad {raqueta2.h/2 + pelota.rad}")
