@@ -31,9 +31,9 @@ class Raqueta:
     def move(self,key_up,key_down):
         key = pg.key.get_pressed()
         if self.pos_y > 0 and key[key_up]:
-            self.pos_y -= 2
+            self.pos_y -= 3
         if self.pos_y < self.height-self.h and key[key_down]:
-            self.pos_y += 2
+            self.pos_y += 3
 
 
 class Pelota:

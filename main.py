@@ -34,6 +34,7 @@ raqueta2 = figura_class.Raqueta(height,width-10-anchor2,w=anchor2)
 
 # Creamos la pelota indicando la posición original (x, y) y el color
 pelota = figura_class.Pelota(width/2,height/2,(198,79,53))
+pelota2 = figura_class.Pelota(width/4,height/4,(18,79,53))
 
 if single_player:
     raqueta1.pos_y = 0
@@ -85,10 +86,18 @@ while running:
         pelota.vx *= -1
     if pelota.pos_x + pelota.rad >= raqueta2.pos_x and abs(pelota.pos_y - (raqueta2.pos_y + raqueta2.h/2)) <= raqueta2.h/2 + pelota.rad:
         pelota.vx *= -1
+
+    pelota2.mover(width,height)
+    if pelota2.pos_x - pelota2.rad - raqueta1.w <= raqueta1.pos_x and abs(pelota2.pos_y - (raqueta1.pos_y + raqueta1.h/2)) <= raqueta1.h/2 + pelota2.rad:
+        pelota2.vx *= -1
+    if pelota2.pos_x + pelota2.rad >= raqueta2.pos_x and abs(pelota2.pos_y - (raqueta2.pos_y + raqueta2.h/2)) <= raqueta2.h/2 + pelota2.rad:
+        pelota2.vx *= -1
+
     
     raqueta1.draw(screen)
     raqueta2.draw(screen)
     pelota.draw(screen)
+    pelota2.draw(screen)
 
     pg.display.flip()
     #input(f"Pelota {pelota.pos_y}, Raqueta 2 {raqueta2.pos_y}, Raqueta 2 + r/2 {raqueta2.pos_y + raqueta2.h/2}, Raqueta2h/2 + pelota.rad {raqueta2.h/2 + pelota.rad}")
